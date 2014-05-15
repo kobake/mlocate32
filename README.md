@@ -4,6 +4,15 @@ mlocate32
 mlocate for Windows.
 
 
+Installation
+------------
+
+Copy exe files below into one of the PATH directory.
+
+- bin\updatedb32.exe
+- bin\locate32.exe
+
+
 Usage
 -----
 
@@ -19,13 +28,6 @@ This make cache "{current drive}\updatedb".
     > locate32 <filename>
 
 This find file locations from cache "{current drive}\updatedb".
-
-
-Application exe files
----------------------
-
-- bin\updatedb32.exe
-- bin\locate32.exe
 
 
 Build
