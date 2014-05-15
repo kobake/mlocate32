@@ -11,6 +11,9 @@ Usage
 
     > updatedb32
 
+This make cache file "{current drive}\updatedb".
+
+
 ### find location of files ###
 
     > locate32 <filename>
