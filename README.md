@@ -11,12 +11,14 @@ Usage
 
     > updatedb32
 
-This make cache file "{current drive}\updatedb".
+This make cache "{current drive}\updatedb".
 
 
 ### find location of files ###
 
     > locate32 <filename>
+
+This find file locations from cache "{current drive}\updatedb".
 
 
 Application exe files
