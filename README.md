@@ -33,4 +33,4 @@ This find file locations from cache "{current drive}\updatedb".
 Build
 -----
 
-You can build it by Visual Studio 2010 if you want.
+You can build this solution "mlocate32.sln" by Visual Studio 2010 if you want.
