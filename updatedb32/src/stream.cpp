@@ -1,4 +1,4 @@
-#include "stream.h"
+﻿#include "stream.h"
 
 CFileOutputStream::CFileOutputStream(const wchar_t* szPath)
 {
