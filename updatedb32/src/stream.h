@@ -17,9 +17,13 @@ public:
 	~CFileOutputStream();
 	bool IsValid() const;
 	void Write(const wchar_t* szText);
+	void WriteF(const wchar_t* szText, ...);
 	void Close();
+	long long Tell();
+	void Seek(long long pos);
 private:
 	HANDLE	m_hFile;
+	DWORD	m_dwPos;
 };
 
 

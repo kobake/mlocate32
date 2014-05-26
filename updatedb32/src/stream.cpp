@@ -11,6 +11,7 @@ CFileOutputStream::CFileOutputStream(const wchar_t* szPath)
 		FILE_ATTRIBUTE_NORMAL,
 		NULL
 	);
+	m_dwPos = 0;
 }
 
 CFileOutputStream::~CFileOutputStream()
@@ -32,6 +33,15 @@ bool CFileOutputStream::IsValid() const
 }
 
 //ファイル出力実装
+void CFileOutputStream::WriteF(const wchar_t* szText, ...)
+{
+	wchar_t buf[1024 * 4];
+	va_list v;
+	va_start(v, szText);
+	_vsnwprintf_s(buf, _countof(buf) - 1, szText, v);
+	va_end(v);
+	Write(buf);
+}
 void CFileOutputStream::Write(const wchar_t* szText)
 {
 	//wprintf(L"%ls", szText);
@@ -44,6 +54,7 @@ void CFileOutputStream::Write(const wchar_t* szText)
 		&dwWrote,
 		NULL
 	);
+	m_dwPos += dwWrote;
 	if(!bRet || dwWrote!=nLen){
 		throw myexception("Write process failed.");
 	}
@@ -52,5 +63,20 @@ void CFileOutputStream::Write(const wchar_t* szText)
 //	if(nLen!=nResult){
 //		throw myexception("Write process failed.");
 //	}
+}
+long long CFileOutputStream::Tell()
+{
+	return (long long)m_dwPos;
+	/*
+	DWORD dw = 0;
+	::GetFileSize(m_hFile, &dw);
+	return (long long)dw;
+	*/
+}
+
+void CFileOutputStream::Seek(long long pos)
+{
+	::SetFilePointer(m_hFile, (LONG)pos, NULL, FILE_BEGIN);
+	m_dwPos = (DWORD)pos;
 }
 
