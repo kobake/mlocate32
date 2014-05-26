@@ -95,15 +95,30 @@ int wmain_routine(int argc, wchar_t* argv[])
 		}
 
 		//インデント位置へのアイテム文字列記録
-		aIndentNames[nIndent] = pLine;
+		const wchar_t* tab = wcschr(pLine, '\t');
+		if(tab){
+			aIndentNames[nIndent].assign(pLine, tab);
+		}
+		else{
+			aIndentNames[nIndent] = pLine;
+		}
+		const wchar_t* pCurrentName = aIndentNames[nIndent].c_str();
 
 		//キーワードマッチ
-		if(wcsistr(pLine, szKeyword)){
+		if(wcsistr(pCurrentName, szKeyword)){
 			//フルパス出力
 			for(int i=0;i<nIndent;i++){
 				wprintf(L"%ls\\", aIndentNames[i].c_str());
 			}
-			wprintf(L"%ls\n", pLine);
+			wprintf(L"%ls", pCurrentName);
+
+			// 属性出力
+			if(tab){
+				wprintf(L" (%ls)", tab + 1);
+			}
+
+			// 改行
+			wprintf(L"\n");
 		}
 	}
 
