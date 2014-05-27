@@ -20,14 +20,29 @@ Usage
 
     > updatedb32
 
-This make cache "{current drive}\updatedb".
+This command make mlocate32 database named "{current drive}\updatedb".
 
 
 ### find location of files ###
 
-    > locate32 <filename>
+    > locate32 <filename-pattern>
 
-This find file locations from cache "{current drive}\updatedb".
+This command find files quickly from mlocate32 database.
+
+#### locate32 detailed usage
+    
+    Usage: locate32 [options] <file-name-pattern>
+    Search for entries in a mlocate32 database.
+    
+    Options:
+      -h [ --help ]               Display this help message
+      -s [ --size ] [+-]N[bcwkMG] File size for filtering (Specifying it as one of
+                                  'find' command options)
+    
+    Sample usage:
+      locate32 hoge.exe      # Match named "*hoge.exe*".
+      locate32 .dat -s +10M  # Match named "*.dat*" and size is bigger than 10MB.
+      locate32 .dat -s +10G  # Match named "*.dat*" and size is bigger than 10GB.
 
 
 Build
