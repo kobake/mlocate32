@@ -60,7 +60,7 @@ std::wstring a2w(std::string str)
 
 int wmain(int argc, wchar_t* argv[])
 {
-	setlocale(LC_ALL, "");
+	setlocale(LC_ALL, "jpn");
 
 	std::vector<std::string> args;
 	for(int i = 1; i < argc; i++){

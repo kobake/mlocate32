@@ -47,7 +47,7 @@ std::map<long long, long long> g_sizes;
 
 int main_routine()
 {
-	setlocale(LC_ALL, "");
+	setlocale(LC_ALL, "jpn");
 
 	//現在のディレクトリを取得
 	//例「D:\abc\def」「\\landisk\abc\def」「D:」
