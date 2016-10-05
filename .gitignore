@@ -4,3 +4,6 @@
 Debug
 Release
 ipch
+
+*.opendb
+*.db
