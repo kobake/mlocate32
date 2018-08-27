@@ -10,3 +10,6 @@ ipch
 
 .vs
 packages
+*.iobj
+*.ipdb
+*.pdb
