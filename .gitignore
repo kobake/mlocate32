@@ -7,3 +7,6 @@ ipch
 
 *.opendb
 *.db
+
+.vs
+packages

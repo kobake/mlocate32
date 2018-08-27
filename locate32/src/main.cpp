@@ -341,7 +341,7 @@ int main_routine(const char* pattern)
 		//インデント位置へのアイテム文字列記録
 		const wchar_t* tab = wcschr(pLine, '\t');
 		if(tab){
-			aIndentNames[nIndent].assign(pLine, tab);
+			aIndentNames[nIndent].assign(pLine, tab - pLine);
 		}
 		else{
 			aIndentNames[nIndent] = pLine;
