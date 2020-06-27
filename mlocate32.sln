@@ -1,8 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30204.135
-MinimumVisualStudioVersion = 10.0.40219.1
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "locate32", "locate32\locate32.vcxproj", "{A819BA18-10E0-46C7-B0C1-E58B084B1822}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "updatedb32", "updatedb32\updatedb32.vcxproj", "{77EF8CCE-EADB-4EDE-8A52-938E422ADDA2}"
@@ -40,8 +38,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {72D20400-C63B-4954-950A-538579D4483A}
 	EndGlobalSection
 EndGlobal
