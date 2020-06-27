@@ -36,6 +36,7 @@ const wchar_t* wcsistr(const wchar_t* str1, const wchar_t* str2)
 //#include "interpreter.hpp"
 #include <boost/program_options.hpp>
 #include <iostream>
+#include <vector>
 namespace po = boost::program_options;
 
 int main2(const std::vector<std::string>& args);

@@ -7,6 +7,7 @@
 #include <algorithm> //sort
 #include <map>
 #include "stream.h"
+#include <locale.h>
 using namespace std;
 
 int main_routine();
