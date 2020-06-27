@@ -101,6 +101,9 @@ int main_routine()
     //書き込み終了
     out.Close();
 
+    // 完了メッセージ
+    wprintf(L"done.\n");
+
     //現在のドライブを取得
 //  const wchar_t* p = wcschr(szCurDir, L'\\');
 //  if(!p)p = wcschr(szCurDir, L'\0');
@@ -115,11 +118,21 @@ void enum_and_print_start(CFileOutputStream& out, wchar_t* szDir)
     enum_and_print(out, szDir, 1);
 }
 
+// 経過時間
+ULONGLONG g_lastPrint = 0;
+
 // アイテムのサイズを返す
 long long enum_and_print(CFileOutputStream& out, wchar_t* szDir, int nIndent)
 {
     //CPUをあんまり食いつぶさないように。
     ::Sleep(1);
+
+    // 定期的に情報出力
+    ULONGLONG t = GetTickCount64();
+    if (t - g_lastPrint >= 200) { // 前回 print より0.2秒以上経過していたら
+        wprintf(L"... %ls\n", szDir);
+        g_lastPrint = t;
+    }
 
     //ワイルドカード式ファイルパスを構築
     wchar_t* szPath = szDir;
